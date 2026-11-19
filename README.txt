@@ -13,8 +13,3 @@ https://github.com/mbathathabangpaul-crypto
 The featured Money Transfer Data Engineering Platform link points to:
 https://github.com/mbathathabangpaul-crypto/mukuru-money-transfer-data-platform
 
-BEFORE PUBLISHING
-- Confirm the CV file exists at assets/Thabang_Mbatha_CV.pdf.
-- Confirm the portrait exists at /images/thabang.jpg. If it does not, initials display instead.
-- Add your actual LinkedIn profile URL if you want a direct LinkedIn link. No personal email address has been invented or added.
-- Review the project descriptions and dates for accuracy before publishing.
