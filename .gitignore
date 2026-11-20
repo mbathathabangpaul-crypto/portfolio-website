@@ -1,0 +1,59 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# AWS credentials
+.aws/
+credentials
+config
+
+# Snowflake configuration
+*.p8
+*.pem
+*.key
+
+# Data files
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.json
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Node.js (if applicable)
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

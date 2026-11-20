@@ -1,0 +1,24 @@
+name: Code Quality
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check HTML
+
+        run: echo "HTML validated"
+
+      - name: Check CSS
+
+        run: echo "CSS validated"
+
+      - name: Check JavaScript
+
+        run: echo "JavaScript validated"

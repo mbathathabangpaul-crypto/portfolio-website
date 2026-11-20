@@ -1,14 +1,3 @@
-/* 
-   GLOBAL DESIGN SYSTEM
-
-   This section contains all theme colors, spacing values,
-   shadows, border radius settings and layout variables.
-
-   Dark mode is the default theme, while light mode overrides
-   only the variables that need to change. This keeps the
-   rest of the stylesheet clean and maintainable.
- */
-
 :root {
   color-scheme: dark;
   --bg: #090d18;
@@ -43,20 +32,6 @@
   --green: #138b61;
   --shadow: 0 24px 70px rgba(30, 60, 100, 0.1);
 }
-
-/* 
-   BASE STYLES
-
-   Global reset and foundational typography styles.
-
-   Responsibilities:
-   - Remove browser inconsistencies
-   - Enable smooth scrolling
-   - Define default fonts
-   - Apply global transitions
-
- */
-
 * {
   box-sizing: border-box;
 }
@@ -86,36 +61,10 @@ a {
 button {
   font: inherit;
 }
-
-/* 
-   LAYOUT HELPERS
-
-   Shared layout utilities used throughout the site.
-
-   Container:
-   Restricts content width and keeps sections aligned.
-
-   Section:
-   Provides consistent vertical spacing between
-   major content areas.
- */
-
 .container {
   width: min(var(--container), calc(100% - 48px));
   margin-inline: auto;
 }
-
-/* 
-   SECTION HEADINGS
-
-   Shared heading system used across all sections.
-
-   Provides:
-   - Consistent spacing
-   - Visual hierarchy
-   - Readability across the portfolio
- */
-
 .section {
   position: relative;
   padding: 108px 0;
@@ -124,16 +73,6 @@ button {
   background: var(--bg-soft);
   border-block: 1px solid var(--line);
 }
-
-/* 
-   ACCESSIBILITY
-
-   Provides keyboard shortcuts and focus handling.
-
-   The skip-link allows keyboard users and screen
-   readers to jump directly to content.
-*/
-
 .skip-link {
   position: absolute;
   top: -60px;
@@ -147,17 +86,6 @@ button {
 .skip-link:focus {
   top: 12px;
 }
-
-/* 
-   BACKGROUND EFFECTS
-
-   Decorative ambient lighting effects.
-
-   Purpose:
-   Add depth and visual interest without distracting
-   from the content itself.
- */
-
 .ambient {
   position: fixed;
   z-index: -1;
@@ -178,15 +106,6 @@ button {
   right: -260px;
   background: var(--accent);
 }
-/* 
-   SCROLL INDICATOR
-
-   Thin progress bar displayed at the top of the page.
-
-   Width is updated dynamically through JavaScript
-   based on the user's scroll position.
- */
-
 .scroll-progress {
   position: fixed;
   z-index: 1200;
@@ -292,21 +211,6 @@ button {
     transform 0.2s ease,
     opacity 0.2s ease;
 }
-
-/*
-   HERO SECTION
-
-   The hero is the first thing visitors see.
-
-   It introduces who I am, what I do, and provides
-   quick access to projects, contact information and
-   key professional highlights.
-
-   Layout:
-   - Left side: copy/content
-   - Right side: profile image and floating cards
- */
-
 .hero {
   min-height: 660px;
   display: flex;
@@ -441,19 +345,6 @@ h1 span,
   color: var(--subtle);
   font-size: 11px;
 }
-
-/* 
-   HERO VISUAL
-
-   Creates the floating portrait effect using:
-   - organic image frame
-   - orbit rings
-   - floating skill cards
-   - subtle ambient lighting
-
-   The goal is to make the hero feel modern and
-   technology-focused without overwhelming the content.
- */
 .hero-visual {
   min-height: 440px;
   display: grid;
@@ -570,18 +461,6 @@ h1 span,
   gap: 90px;
   align-items: start;
 }
-
-/* 
-   SECTION HEADINGS
-
-   Shared heading system used across all sections.
-
-   Provides:
-   - Consistent spacing
-   - Visual hierarchy
-   - Readability across the portfolio
- */
-
 .section-heading {
   max-width: 700px;
   margin-bottom: 52px;
@@ -604,17 +483,6 @@ h1 span,
 .centered > p:last-child {
   margin-inline: auto;
 }
-
-/* =
-   ABOUT SECTION
-
-   Brief overview of professional background,
-   personal journey and career direction.
-
-   Focuses on experience and motivation rather than
-   listing technical skills.
-*/
-
 .about-copy p {
   color: var(--muted);
   font-size: 15px;
@@ -633,17 +501,6 @@ h1 span,
 .text-link:hover {
   gap: 15px;
 }
-
-/* 
-   CAREER JOURNEY TIMELINE
-
-   Visual representation of professional and educational
-   milestones.
-
-   Each timeline card highlights a major stage in my
-   journey from industry and customer operations into
-   software engineering and data engineering.
- */
 .timeline {
   position: relative;
   max-width: 850px;
@@ -712,76 +569,122 @@ h1 span,
 .timeline-current .timeline-card {
   border-color: rgba(83, 199, 245, 0.38);
 }
-
-/* 
-   TECHNOLOGY STACK
-
-   Core technologies and platforms currently used
-   across data engineering, analytics and software
-   development projects.
-
-   Cards are intentionally lightweight and focus
-   on readability rather than heavy animation.
-*/
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 16px;
 }
 .skill-card {
-  min-height: 190px;
-  padding: 23px;
+  position: relative;
+  isolation: isolate;
+  min-height: 228px;
+  overflow: hidden;
+  padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 17px;
-  background: var(--surface);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--skill-accent) 9%, var(--surface)),
+    var(--surface) 68%
+  );
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
 }
-.skill-card:hover,
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(83, 199, 245, 0.45);
+.skill-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -48px;
+  right: -42px;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background: var(--skill-accent);
+  opacity: 0.08;
+  filter: blur(2px);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
-.skill-symbol {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 18px;
-  border-radius: 12px;
-  color: var(--primary);
-  background: rgba(83, 199, 245, 0.1);
-  font:
-    700 12px "Space Grotesk",
-    sans-serif;
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--skill-accent) 65%, var(--line));
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.13);
+}
+.skill-card:hover::before {
+  transform: scale(1.35);
+  opacity: 0.14;
+}
+.skill-logo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  margin: 0 0 15px;
+  padding: 8px;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 35%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--skill-accent) 9%, var(--surface));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.skill-category {
+  margin: 0 0 5px !important;
+  color: var(--skill-accent) !important;
+  font-size: 8px !important;
+  font-weight: 800;
+  letter-spacing: 1.3px;
 }
 .skill-card h3 {
   margin-bottom: 7px;
   font-size: 16px;
 }
-.skill-card p {
+.skill-card p:not(.skill-category) {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.65;
 }
-
-/* 
-   PROJECT SHOWCASE
-
-   Collection of selected case studies demonstrating:
-
-   - Data Engineering
-   - Analytics
-   - Business Intelligence
-   - Software Development
-
-   Cards use consistent visual hierarchy with:
-   project type, highlights, technologies and actions.
- */
-
+.skill-level {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 25%, var(--line));
+  border-radius: 6px;
+  color: var(--skill-accent);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+.skill-python {
+  --skill-accent: #f2c14e;
+}
+.skill-sql {
+  --skill-accent: #59b9ed;
+}
+.skill-snowflake {
+  --skill-accent: #54c7ef;
+}
+.skill-aws {
+  --skill-accent: #f2a541;
+}
+.skill-powerbi {
+  --skill-accent: #e9c94b;
+}
+.skill-git {
+  --skill-accent: #ef8354;
+}
+.skill-js {
+  --skill-accent: #e6c84f;
+}
+.skill-bash {
+  --skill-accent: #65d6a5;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(83, 199, 245, 0.45);
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -869,19 +772,6 @@ h1 span,
 .project-link:hover {
   text-decoration: underline;
 }
-
-/* 
-   PROJECT VISUALS
-
-   Decorative visual components used inside project
-   cards.
-
-   Used to create visual distinction between:
-   - Data pipelines
-   - Analytics dashboards
-   - Software projects
-*/
-
 .project-visual {
   min-height: 125px;
   display: flex;
@@ -945,17 +835,6 @@ h1 span,
 .bar-five {
   height: 62px;
 }
-
-/*
-   GITHUB REPOSITORIES
-
-   Additional repository showcase.
-
-   Displays selected public repositories and serves
-   as a bridge between the portfolio and GitHub
-   profile.
-*/
-
 .repo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -996,17 +875,6 @@ h1 span,
   color: var(--muted);
   font-size: 13px;
 }
-
-/* 
-   CONTINUOUS LEARNING
-
-   Technologies and concepts currently being
-   explored.
-
-   Reflects ongoing professional development
-   and commitment to lifelong learning.
- */
-
 .development-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1048,19 +916,6 @@ h1 span,
   color: var(--muted);
   font-size: 12px;
 }
-
-/*
-   CONTACT SECTION
-
-   Final call-to-action.
-
-   Encourages recruiters, hiring managers and
-   potential collaborators to get in touch.
-
-   Styled differently from the rest of the page
-   to create a natural endpoint to the portfolio.
-*/
-
 .contact-section {
   padding-top: 80px;
   padding-bottom: 100px;
@@ -1091,14 +946,6 @@ h1 span,
 .contact-actions {
   justify-content: center;
 }
-
-/* 
-   FOOTER
-
-   Closing section containing attribution,
-   branding and copyright information.
- */
-
 .site-footer {
   padding: 24px 0;
   border-top: 1px solid var(--line);
@@ -1115,16 +962,6 @@ h1 span,
   color: var(--subtle);
   font-size: 11px;
 }
-
-/* 
-   INTERACTIONS & ANIMATIONS
-
-   Scroll reveal effects used throughout the page.
-
-   Animations are intentionally subtle to preserve
-   readability and maintain a professional feel.
-*/
-
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1136,37 +973,10 @@ h1 span,
   opacity: 1;
   transform: translateY(0);
 }
-
-/* 
-   ACCESSIBILITY FOCUS STATES
-
-   Visible focus indicators improve keyboard
-   navigation and accessibility compliance.
- */
-
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
-
-/* 
-   RESPONSIVE DESIGN
-
-   Breakpoints
-
-   900px
-   Tablets and small laptops
-
-   700px
-   Mobile navigation and stacked layouts
-
-   420px
-   Small-screen devices
-
-   Layouts progressively simplify while preserving
-   usability and readability.
-*/
-
 @media (max-width: 900px) {
   .hero-grid {
     gap: 30px;
@@ -1360,16 +1170,6 @@ h1 span,
     width: 100%;
   }
 }
-
-/* 
-   REDUCED MOTION SUPPORT
-
-   Respects operating system accessibility settings.
-
-   Animations and transitions are reduced for users
-   who prefer minimal motion.
- */
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1382,5 +1182,150 @@ h1 span,
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Portfolio refinements: portrait, toolkit cards and credential cards. */
+.toolkit-strip {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(83, 199, 245, 0.055),
+      rgba(155, 140, 255, 0.055)
+    ),
+    var(--surface);
+}
+.toolkit-label {
+  margin: 0 0 14px;
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+.toolkit-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toolkit-items span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px 7px 7px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  background: var(--bg-soft);
+  font-size: 11px;
+  font-weight: 600;
+}
+.toolkit-items img {
+  display: block;
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 980px;
+  margin-inline: auto;
+}
+.credential-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.credential-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(83, 199, 245, 0.4);
+}
+.credential-icon {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--primary);
+  background: linear-gradient(
+    135deg,
+    rgba(83, 199, 245, 0.16),
+    rgba(155, 140, 255, 0.13)
+  );
+  font:
+    700 12px "Space Grotesk",
+    sans-serif;
+}
+.credential-card > div {
+  min-width: 0;
+  flex: 1;
+}
+.credential-type {
+  margin: 0 0 4px;
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+.credential-card h3 {
+  margin: 0 0 3px;
+  font-size: 15px;
+}
+.credential-card > div > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.credential-status {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--subtle);
+  font-size: 9px;
+  font-weight: 600;
+}
+.credentials-note {
+  max-width: 900px;
+  margin: 20px auto 0;
+  color: var(--subtle);
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+  .credential-card {
+    padding: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .credential-card {
+    flex-wrap: wrap;
+  }
+  .credential-status {
+    margin-left: 61px;
+  }
+  .toolkit-strip {
+    padding: 17px;
+  }
+  .toolkit-items {
+    gap: 7px;
   }
 }
