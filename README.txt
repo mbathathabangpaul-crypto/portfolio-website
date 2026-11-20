@@ -1,4 +1,4 @@
-# 🚀 Thabang Mbatha Portfolio Website
+# Thabang Mbatha Portfolio Website
 
 A modern, responsive, and accessible portfolio website showcasing my journey from Customer Support Consultant to Data Engineer.
 
@@ -6,7 +6,7 @@ Built with HTML, CSS, and JavaScript, this portfolio demonstrates frontend devel
 
 
 
-## 👨‍💻 About Me
+##About Me
 
 I am **Thabang Paul Mbatha**, a graduate in Software Engineering/Data Engineering at WeThinkCode and a Jr Data Engineer at Mukuru.
 
@@ -23,7 +23,7 @@ This portfolio was created to showcase:
 
 
 
-## 🌐 Live Website
+## Live Website
 
 **Portfolio:** [https://mbathathabangpaul-crypto.github.io/portfolio-website/]
 
@@ -33,7 +33,7 @@ This portfolio was created to showcase:
 
 ---
 
-# ✨ Features
+# Features
 
 ### Modern UI/UX
 
@@ -74,7 +74,7 @@ This portfolio was created to showcase:
 
 ---
 
-# 🛠 Technology Stack
+# Technology Stack
 
 ## Frontend
 
@@ -105,7 +105,7 @@ This portfolio was created to showcase:
 
 ---
 
-# 🏗 Architecture
+# Architecture
 
 ## Project Structure
 
@@ -157,7 +157,7 @@ Newone\-website
 
 ---
 
-# 📐 Website Structure
+# Website Structure
 
 ## Hero Section
 
@@ -299,7 +299,7 @@ Channels:
 
 ---
 
-# 🎨 Design Principles
+# Design Principles
 
 This project follows several key design principles:
 
@@ -329,7 +329,7 @@ Optimized for:
 
 ---
 
-# 🌙 Theme System
+# Theme System
 
 The website supports:
 
@@ -355,7 +355,7 @@ Features:
 
 ---
 
-# 📈 Future Enhancements
+# Future Enhancements
 
 Planned improvements include:
 
@@ -385,7 +385,7 @@ Skills and technology\-based filtering.
 
 ---
 
-# 🚀 Local Development
+# Local Development
 
 Clone the repository:
 
@@ -403,13 +403,13 @@ Or launch using VS Code Live Server.
 
 ---
 
-# 🤝 Contributions
+# Contributions
 
 This project is primarily a personal portfolio; however, feedback, suggestions, and improvements are always welcome.
 
 ---
 
-# 📬 Contact
+# Contact
 
 **Thabang Paul Mbatha**
 
